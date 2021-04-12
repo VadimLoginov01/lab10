@@ -9,8 +9,8 @@ class EquationTest extends TestCase
     public function testEquation()
     {
         $equation = new Equation();
-        $this->assertEquals([-12], $equation->equation(6, 72));
-        $this->assertEquals([1], $line->line(-1, 1));
+        $this->assertEquals([-12], $equation->li_solve(6, 72));
+        $this->assertEquals([1], $equation->li_solve(-1, 1));
     }
 
     public function testEquationBad()
@@ -18,7 +18,7 @@ class EquationTest extends TestCase
         $line = new Line();
         $this->expectExceptionMessage('This line equation does not exist!');
         $this->expectException(Exception::class);
-        $line->line(0, -7);
-        $line->line(0, 2);
+        $equation->li_solve(0, -10);
+        $equation->li_solve(0, 10);
     }
 }
